@@ -4,24 +4,39 @@
 }
 
 body {
-    background-image: url("/assets/tiles_background.png");
-    /* background-image: linear-gradient(to right, #fff, #000); */
+    background-attachment: fixed;
+    background-image: url("assets/tiles_background.png");
     margin: 0;
     padding: 0;
     display: fixed;
 }
 
 main {
-    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.64);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(16px);
     margin-top: 1rem;
+    margin-bottom: 2rem;
     margin-left: 10rem;
     margin-right: 10rem;
     padding: 1rem;
     border: 1px solid #555555a0;
     border-radius: 2rem;
-    box-shadow: 0rem 1rem 10px #555555a0;
+    box-shadow: 2rem 1rem 10px #555555a0;
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width:1200px) {
+    main {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    :root {
+        font-size: 25px;
+        font-family: 'JetBrains Mono', monospace;
+    }
 }
 
 h1 {
@@ -36,8 +51,23 @@ h1 {
     display: flex;
 }
 
-.person img {
+.photo-wrapper {
+    flex: 1 1 0;
+    position: relative;
+}
+
+.photo-wrapper img {
     box-shadow: 1rem 0.5rem 10px #555555a0;
+    height: 70%;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.info-list {
+    flex: 1 1 0;
 }
 
 .info-list li{
@@ -59,6 +89,47 @@ h1 {
 
 .description-wrapper {
     margin-top: 2rem;
-    border-top: 1px solid black;
+    border-top: 1px solid darkslateblue;
     width: 100%;
+}
+
+.description {
+    position: relative;
+    width: auto;
+    margin-left: 5rem;
+}
+
+.description h3 {
+    font-weight: 256;
+    border-bottom: 1px dashed black;
+}
+
+.contacts-wrapper {
+    width: 100%;
+}
+
+.contacts {
+    margin: auto;
+    table-layout: fixed;
+    width: 40%;
+}
+
+.contacts td {
+    text-align: left;
+}
+
+/* .contacts, td {
+    border: 1px solid black;
+} */
+
+.contacts a {
+    text-decoration: none;
+    color:darkslateblue;
+    font-style: italic;
+}
+
+hr {
+    height: 1px;
+    background-color:darkslateblue;
+    border: none;
 }
